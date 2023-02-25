@@ -1,4 +1,5 @@
 const path = require('path');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -22,9 +23,59 @@ module.exports = {
               outputPath: 'images',
             },
           },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.90],
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              webp: {
+                quality: 75
+              }
+            },
+          },
         ],
       },
     ],
   },
+  plugins: [
+    new ImageMinimizerPlugin({
+      minimizerOptions: {
+        plugins: [
+          ['gifsicle', { interlaced: true }],
+          ['jpegtran', { progressive: true }],
+          ['optipng', { optimizationLevel: 5 }],
+          [
+            'svgo',
+            {
+              plugins: [
+                {
+                  name: 'removeViewBox',
+                  active: false,
+                },
+                {
+                  name: 'addAttributesToSVGElement',
+                  params: {
+                    attributes: [{ xmlns: 'http://www.w3.org/2000/svg' }],
+                  },
+                },
+              ],
+            },
+          ],
+        ],
+      },
+    }),
+  ],
 };
 
