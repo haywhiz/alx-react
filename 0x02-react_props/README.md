@@ -215,135 +215,172 @@ In the folder **CourseList**, create a new component named **CourseList**:
     - it includes a **CourseListRow** with the props **textFirstCell="Available courses"** and **isHeader=true**
     - it includes a **CourseListRow** with the props **textFirstCell="Course name"**, **textSecondCell="Credit"**, and **isHeader=true**
 - it contains a **tbody** element
-it includes a CourseListRow with the props textFirstCell="ES6", textSecondCell="60", and isHeader=false
-it includes a CourseListRow with the props textFirstCell="Webpack", textSecondCell="20", and isHeader=false
-it includes a CourseListRow with the props textFirstCell="React", textSecondCell="40", and isHeader=false
-Create and import a file CourseList.css where you will be able to add the styling for the component
+    - it includes a **CourseListRow** with the props **textFirstCell="ES6"**, **textSecondCell="60"**, and **isHeader=false**
+    - it includes a **CourseListRow** with the props **textFirstCell="Webpack"**, **textSecondCell="20"**, and **isHeader=false**
+    - it includes a **CourseListRow** with the props **textFirstCell="React"**, **textSecondCell="40"**, and **isHeader=false**
 
-Create a CourseList.test.js with two checks:
+Create and import a file **CourseList.css** where you will be able to add the styling for the component
 
-Check that it renders CourseList component without crashing
-Check that it renders the 5 different rows
-Modify the App component
+Create a **CourseList.test.js** with two checks:
+
+- Check that it renders CourseList component without crashing
+- Check that it renders the 5 different rows
+
+### **Modify the App component**
+
 Modify the App component to display either the Login, or the CourseList component:
 
-Import Proptypes
-Create a property isLoggedIn. It should be false by default
-When isLoggedIn is false, display the Login screen
-When isLoggedIn is true, display the CourseList screen
+- Import Proptypes
+- Create a property **isLoggedIn**. It should be **false** by default
+- When **isLoggedIn** is false, display the **Login** screen
+- When **isLoggedIn** is true, display the **CourseList** screen
+
 Modify the App test suite:
 
-Add a test to check that CourseList is not displayed
-Describe a new case, when isLoggedIn is true, and add two checks. The first one should verify that the Login component is not included. The second one should verify that the CourseList component is included
-Modify the NotificationItem component
+- Add a test to check that **CourseList** is not displayed
+- Describe a new case, when **isLoggedIn** is true, and add two checks. The first one should verify that the Login component is not included. The second one should verify that the CourseList component is included.
+
+### **Modify the NotificationItem component**
+
 Define the prop types for the NotificationItem component:
 
-Verify that html is an object with the key __html, and that the value is a string
-Require type to be a defined prop and a string. It should default to default if type is not passed by the parent component
-Verify that value is a string
-Modify the Notifications component
-Add a new div element with the class menuItem:
+- Verify that **html** is an object with the key **__html**, and that the value is a string
+- Require **type** to be a defined prop and a string. It should default to **default** if type is not passed by the parent component
+- Verify that **value** is a string
 
-it contains the text Your notifications
-it should be display right before div.Notifications
-Add a prop to the Notifications component named displayDrawer:
+### **Modify the Notifications component**
 
-it should be a boolean
-by default it should be false
-Modify the div.Notifications tag:
+Add a new **div** element with the class **menuItem:**
+- it contains the text **Your notifications**
+- it should be display right before **div.Notifications**
 
-it should only be visible when displayDrawer is true
-Modify the Notifications.test.js:
+Add a prop to the Notifications component named **displayDrawer:**
+- it should be a boolean
+- by default it should be **false**
 
-Add a check that the menu item is being displayed when displayDrawer is false
-Add a check that the div.Notifications is not being displayed when displayDrawer is false
-Add a check that the menu item is being displayed when displayDrawer is true
-Add a check that the div.Notifications is being displayed when displayDrawer is true
-Update the UI
-You can use the React extension in Chrome, to toggle the two booleans displayDrawer and isLoggedIn
+Modify the **div.Notifications** tag:
+- it should only be visible when displayDrawer is true
+
+Modify the **Notifications.test.js**:
+- Add a check that the menu item is being displayed when **displayDrawer** is **false**
+- Add a check that the div.Notifications is not being displayed when **displayDrawer** is **false**
+- Add a check that the menu item is being displayed when **displayDrawer** is **true**
+- Add a check that the div.Notifications is being displayed when **displayDrawer** is **true**
+
+### **Update the UI**
+
+You can use the React extension in Chrome, to toggle the two booleans **displayDrawer** and **isLoggedIn**
 
 Notifications:
 
-Modify the CSS to make the UI looks like the image below when displayDrawer is true
+- Modify the CSS to make the UI looks like the image below when displayDrawer is **true**
+![](./img/0x02-react_props%20true.png)
+
+- Modify the CSS to make the UI looks like the image below when displayDrawer is **false**
+![](./img/0x02-react_props%20DP%20false.png)
+
+- Modify the CSS to make the UI looks like the image below when **isLoggedIn** is **false**
+![](./img/0x02-react_props%20login%20false.png)
+
+- Modify the CSS to make the UI looks like the image below when **isLoggedIn** is **true**
+![](./img/0x02-react_props%20login%20true.png)
 
 Requirements:
 
-You should define a default property for every prop that is not required
-The console in your browser should not show any error or warning
+- You should define a default property for every prop that is not required
+- The console in your browser should not show any error or warning
 Running the test suites, should show:
+```
 Test Suites: 5 passed, 5 total
 Tests: 24 passed, 24 total
+```
 
 Repo:
 
-GitHub repository: alx-react
-Directory: 0x02-react_props
-File: task_4/dashboard/src/CourseList/CourseListRow.js, task_4/dashboard/src/CourseList/CourseListRow.test.js, task_4/dashboard/src/CourseList/CourseList.js, task_4/dashboard/src/CourseList/CourseList.css, task_4/dashboard/src/CourseList/CourseList.test.js, task_4/dashboard/src/App/App.js, task_4/dashboard/src/App/App.test.js, task_4/dashboard/src/Notifications/NotificationItem.js, task_4/dashboard/src/Notifications/Notifications.js, task_4/dashboard/src/Notifications/Notifications.test.js
+> GitHub repository: alx-react
+
+> Directory: 0x02-react_props
+
+>**File: task_4/dashboard/src/CourseList/CourseListRow.js, task_4/dashboard/src/CourseList/CourseListRow.test.js, task_4/dashboard/src/CourseList/CourseList.js, task_4/dashboard/src/CourseList/CourseList.css, task_4/dashboard/src/CourseList/CourseList.test.js, task_4/dashboard/src/App/App.js, task_4/dashboard/src/App/App.test.js, task_4/dashboard/src/Notifications/NotificationItem.js, task_4/dashboard/src/Notifications/Notifications.js, task_4/dashboard/src/Notifications/Notifications.test.js**
 
 *** 
 
-5. Shapes, Loops, and Keys
-mandatory
-Score: 0.0% (Checks completed: 0.0%)
-Create the courses array
-Create a new Shape named CourseShape containing:
+## **5. Shapes, Loops, and Keys**
 
-id (number, required)
-name (string, required)
-credit (number, required)
-Modify CourseList.js:
+### **Create the courses array**
 
-Add a propType listCourses that will take an array of the shape you created
-Make sure that if listCourses is not passed by the parent component the propType defaults to an empty array
-When listCourses is empty, display a row showing No course available yet
-When listCourses contains at least one element, display a row for each element showing the name of the course and the number of credits
-Make sure to add a key to help React optimize rendering
-Modify CourseListRow.js:
+Create a new Shape named **CourseShape** containing:
 
-Make sure the property textSecondCell can accept either a string or number
-Modify the App.js to create a new array named listCourses. It should contains three elements:
+- **id** (number, required)
+- **name** (string, required)
+- **credit** (number, required)
 
-id: 1, name: ‘ES6’, credit: 60
-id: 2, name: ‘Webpack’, credit: 20
-id: 3, name: ‘React’, credit: 40
-Add a listCourses property to the CourseList component in App
+Modify **CourseList.js**:
 
-Create the notifications array
-Inside the Notifications directory, create a new Shape named NotificationItemShape containing:
+- Add a propType **listCourses** that will take an array of the shape you created
+- Make sure that if **listCourses** is not passed by the parent component the propType defaults to an empty array
+- When listCourses is empty, display a row showing **No course available yet**
+- When listCourses contains at least one element, display a row for each element showing the name of the course and the number of credits
+- Make sure to add a key to help React optimize rendering
 
-an id (number, required)
-a html (object of { \_\_html: string })
-a type (string, required)
-a value (string)
+Modify **CourseListRow.js**:
+
+- Make sure the property **textSecondCell** can accept either a **string** or **number**
+
+Modify the **App.js** to create a new array named **listCourses**. It should contains three elements:
+
+- id: 1, name: ‘ES6’, credit: 60
+- id: 2, name: ‘Webpack’, credit: 20
+- id: 3, name: ‘React’, credit: 40
+
+Add a **listCourses** property to the **CourseList** component in **App**
+
+### **Create the notifications array**
+
+Inside the **Notifications** directory, create a new Shape named **NotificationItemShape** containing:
+
+- an id (number, required)
+- a html (object of { **\/_\_/html**: string })
+- a type (string, required)
+- a value (string)
+
 Modify Notifications:
 
-Add a proptype listNotifications that will take an array of the shape you just created
-When listNotifications is empty, display a row showing No new notification for now
-When listNotifications contains at least one element, display a NotificationItem for each element of the array
-Modify the App to create a new array named listNotifications. It should contains all the previous elements we used to have in Notifications elements. Add an id for each element.
+- Add a proptype **listNotifications** that will take an array of the shape you just created
+- When listNotifications is empty, display a row showing **No new notification for now**
+- When listNotifications contains at least one element, display a **NotificationItem** for each element of the array
 
-Add the property listNotifications to the Notifications component in App
+Modify the App to create a new array named **listNotifications**. It should contains all the previous elements we used to have in **Notifications** elements. Add an id for each element.
 
-Update the tests
-Modify Notifications.test.js:
+Add the property **listNotifications** to the **Notifications** component in **App**
 
-Add a new test to verify that Notifications renders correctly if you pass an empty array or if you don’t pass the listNotifications property
-Add a new test to verify that when you pass a list of notifications, the component renders it correctly and with the right number of NotificationItem
-Add a new test to verify that when listNotifications is empty the message Here is the list of notifications is not displayed, but No new notification for now is
-Modify CourseList.test.js:
+### **Update the tests**
 
-Add a new test to verify that CourseList renders correctly if you pass an empty array or if you don’t pass the listCourses property
-Add a new test to verify that when you pass a list of courses, the component renders it correctly
+Modify **Notifications.test.js**:
+
+- Add a new test to verify that **Notifications** renders correctly if you pass an empty array or if you don’t pass the **listNotifications** property
+- Add a new test to verify that when you pass a list of notifications, the component renders it correctly and with the right number of **NotificationItem**
+- Add a new test to verify that when **listNotifications** is empty the message **Here is the list of notifications** is not displayed, but **No new notification for now** is
+
+Modify **CourseList.test.js:**
+
+- Add a new test to verify that **CourseList** renders correctly if you pass an empty array or if you don’t pass the **listCourses** property
+- Add a new test to verify that when you pass a list of courses, the component renders it correctly
+
 Requirements:
 
-When writing your tests, look into using describe and beforeEach for each scenario (e.g. With CourseList Empty, With CourseList containing elements)
-You should define a default property for every prop that is not required
-The console in your browser should not show any error or warning
-Running the test suites, should show:
+- When writing your tests, look into using **describe** and **beforeEach** for each scenario (e.g. **With CourseList Empty**, **With CourseList containing elements**)
+- You should define a default property for every prop that is not required
+- The console in your browser should not show any error or warning
+- Running the test suites, should show:
+```
 Test Suites: 9 passed, 9 total
 Tests: 37 passed, 37 total
-Repo:
+```
+**Repo:**
 
-GitHub repository: alx-react
-Directory: 0x02-react_props
-File: task_5/dashboard/src/CourseList/CourseShape.js, task_5/dashboard/src/CourseList/CourseList.js, task_5/dashboard/src/CourseList/CourseListRow.js, task_5/dashboard/src/App/App.js, task_5/dashboard/src/Notifications/NotificationItemShape.js, task_5/dashboard/src/Notifications/Notifications.js, task_5/dashboard/src/Notifications/NotificationItem.test.js, task_5/dashboard/src/CourseList/CourseList.test.js
+> GitHub repository: alx-react
+
+> Directory: 0x02-react_props
+
+>File: task_5/dashboard/src/CourseList/CourseShape.js, task_5/dashboard/src/CourseList/CourseList.js, task_5/dashboard/src/CourseList/CourseListRow.js, task_5/dashboard/src/App/App.js, task_5/dashboard/src/Notifications/NotificationItemShape.js, task_5/dashboard/src/Notifications/Notifications.js, task_5/dashboard/src/Notifications/NotificationItem.test.js, task_5/dashboard/src/CourseList/CourseList.test.js
